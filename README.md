@@ -1,12 +1,13 @@
 #webManage
 
-> Web管理系统实示例Demo
+> Web 管理系统实 ant-design-Vue
 
-拿到项目先 npm install 
+拿到项目先 npm install
 然后在运行 npm run dev
+
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 

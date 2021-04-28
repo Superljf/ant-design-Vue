@@ -36,7 +36,7 @@ export default {
         this.$message.warning("请输入账号名称");
         return;
       }
-      if (this.uAccount === "") {
+      if (this.uPwd === "") {
         this.$message.warning("请输入密码");
         return;
       }
