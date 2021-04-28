@@ -2,7 +2,7 @@
   "name": "webManage",
   "version": "1.0.0",
   "description": "Web管理系统",
-  "author": "JoneXuu <jonexu@139.com>",
+  "author": "",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
