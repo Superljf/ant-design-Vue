@@ -32,14 +32,14 @@ export default {
   mounted() {},
   methods: {
     loginIn() {
-      if (this.uAccount === "") {
-        this.$message.warning("请输入账号名称");
-        return;
-      }
-      if (this.uPwd === "") {
-        this.$message.warning("请输入密码");
-        return;
-      }
+      //   if (this.uAccount === "") {
+      //     this.$message.warning("请输入账号名称");
+      //     return;
+      //   }
+      //   if (this.uPwd === "") {
+      //     this.$message.warning("请输入密码");
+      //     return;
+      //   }
       this.$router.push({
         path: "/Home",
       }); //利用路由跳转页

@@ -7,7 +7,6 @@
       :trigger="null"
       collapsible
     >
-      <!-- theme="light" -->
       <div class="Navlogo">
         <a-icon type="schedule" />
         Ant-design-Vue
@@ -18,14 +17,11 @@
         :open-keys="openNavList"
         @openChange="onOpenNav"
       >
-        <a-sub-menu :key="nav.MenuID" v-for="(nav, nInd) in NavBarData">
+        <a-sub-menu :key="nav.MenuID" v-for="nav in NavBarData">
           <span slot="title"
             ><a-icon :type="nav.Icon" />{{ nav.MenuTitle }}</span
           >
-          <a-menu-item
-            :key="nChild.MenuID"
-            v-for="(nChild, nChildInd) in nav.Children"
-          >
+          <a-menu-item :key="nChild.MenuID" v-for="nChild in nav.Children">
             <router-link :to="nChild.MenuPath">{{
               nChild.MenuTitle
             }}</router-link>
@@ -48,6 +44,13 @@
           :checked="isOpenRemember"
           @change="changeOpenType"
         />
+        <a-button
+          v-bind:style="{ marginLeft: '85%' }"
+          type="primary"
+          @click="unLogin"
+        >
+          退出
+        </a-button>
       </a-layout-header>
       <a-layout-content class="pageCont">
         <a-spin tip="Loading..." :spinning="loading">
@@ -73,9 +76,6 @@
           <router-view class="moduleAll" :class="{ hasTab: isOpenRemember }" />
         </a-spin>
       </a-layout-content>
-      <!--<a-layout-footer style="textAlign: center">
-			Ant Design ©2018 Created by Ant UED
-		  </a-layout-footer> -->
     </a-layout>
   </a-layout>
 </template>
@@ -162,12 +162,13 @@ export default {
       this.loading = false;
     }, 500);
     //Message,页面顶部的通知
-    this.$message.success("感谢您的使用", 2.5, () => {
-      //带callback的
-      this.$message.warning("感兴趣的话，给个Star吧"); //普通的
-    });
   },
   methods: {
+    unLogin() {
+      this.$router.push({
+        path: "/",
+      }); //利
+    },
     changeOpenType(e) {
       // console.log(e);
       this.$store.commit("changeOpenRemember", e);
