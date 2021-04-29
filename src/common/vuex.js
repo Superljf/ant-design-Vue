@@ -50,6 +50,7 @@ const store = new Vuex.Store({
       state.gLoad = true;
     }
   },
+
   actions: {
     initApp(context) {
       context.commit("InitData");
