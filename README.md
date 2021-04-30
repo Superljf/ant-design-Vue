@@ -1,9 +1,9 @@
-#webManage
+## 如果帮助到了您 希望你给我个 star 吧！
 
 > Web 管理系统实 ant-design-Vue
 
-拿到项目先 npm install
-然后在运行 npm run dev
+npm install
+npm run dev
 
 ## Build Setup
 

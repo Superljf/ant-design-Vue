@@ -14,6 +14,7 @@ const store = new Vuex.Store({
   mutations: {
     InitData(state) {},
     changeOpenRemember(state, val) {
+      console.log(state, val);
       state.isOpenRemember = val;
     },
     changeActPage(state, val) {

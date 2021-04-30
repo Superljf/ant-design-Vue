@@ -72,7 +72,6 @@
             >
             </a-tab-pane>
           </a-tabs>
-
           <router-view class="moduleAll" :class="{ hasTab: isOpenRemember }" />
         </a-spin>
       </a-layout-content>
@@ -157,41 +156,35 @@ export default {
     };
   },
   mounted() {
+    console.log(this.$store.state);
     setTimeout(() => {
-      //假装加载。。。
       this.loading = false;
     }, 500);
-    //Message,页面顶部的通知
   },
   methods: {
     unLogin() {
       this.$router.push({
         path: "/",
-      }); //利
+      });
     },
     changeOpenType(e) {
-      // console.log(e);
       this.$store.commit("changeOpenRemember", e);
     },
     changePage(e) {
-      // console.log(e);
       if (e != this.actPage) {
         this.$store.commit("changeActPage", e);
         this.$router.push({ path: this.pageTabList[e].path });
       }
     },
     onDelPage(e) {
-      // console.log('del',e);
       let arr = this.pageTabList,
         len = arr.length;
       if (e == len - 1 && this.actPage == e) {
-        //删的是最后一页
         this.$router.push({ path: this.pageTabList[len - 2].path });
       }
       this.$store.commit("delPage", e);
     },
     onOpenNav(e) {
-      // console.log(e);
       let endKey = e.pop();
       this.openNavList = endKey ? [endKey] : [];
     },
